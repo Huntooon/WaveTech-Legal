@@ -38,73 +38,79 @@
 <h1>WaveBot Privacy Policy</h1>
 <p><strong>Effective Date:</strong> June 28, 2026
 <strong>Last Updated:</strong> June 28, 2026</p>
-<p>This Privacy Policy explains what information WaveBot ("the Bot," "we," "us") accesses, how it is used, and your choices regarding that information. WaveBot is a private Discord bot operated for the WaveTech community and is used to moderate the WaveTech Discord server and manage its associated Minecraft servers. By remaining a member of a server where WaveBot is present, you acknowledge the practices described below.</p>
+<p>This Privacy Policy explains what information WaveBot ("the Bot," "we," "us") accesses, how it is used, where it is stored, and your choices regarding that information. WaveBot is a private Discord bot operated for the WaveTech community and is used to moderate the WaveTech Discord server and manage its associated Minecraft servers. By remaining a member of a server where WaveBot is present, you acknowledge the practices described below.</p>
 <hr />
 <h2>1. Who Operates the Bot</h2>
 <p>WaveBot is operated by the WaveTech server administration team ("the Operator"). WaveBot is a private, single-server bot and is not offered to or installed on third-party servers. If you have questions about this policy or your data, the preferred way to reach us is to contact a member of staff with the <strong>Moderator</strong> role in the WaveTech Discord server. If you are unable to reach a Moderator, you may instead email huntoonmc@gmail.com.</p>
 <hr />
-<h2>2. Information We Access</h2>
-<p>WaveBot operates exclusively through Discord slash commands and Discord gateway events. It does <strong>not</strong> read the content of your normal chat messages, direct messages, or voice activity, and it does not use the Message Content Intent or the Presence Intent. The Bot accesses only the following categories of information, and only as needed to perform a specific function:</p>
+<h2>2. Information We Access and Store</h2>
+<p>WaveBot operates through Discord slash commands and Discord gateway events. It does <strong>not</strong> read the content of your normal chat messages, direct messages, or voice activity, and it does not use the Message Content Intent or the Presence Intent. The Bot accesses and, where noted, stores the following categories of information:</p>
 <p><strong>Discord account and membership data</strong>
-- Your Discord user ID, username, and global/display name
-- Your avatar image
+- Your Discord user ID
+- Your username, global/display name, and avatar
 - Your account creation date
 - The date you joined the server
 - Your server roles
-- Server membership events (when a member joins or leaves the server)</p>
+- Server membership and role-change events (when you join, leave, or have your roles updated)</p>
+<p><strong>Stored member profile data</strong></p>
+<p>To power its whitelist automation and member-directory features, WaveBot maintains a database that stores:
+- Your Discord user ID
+- Your Minecraft in-game name (IGN), if you or staff have linked one
+- Your relevant server roles, mirrored to determine Minecraft access
+- Any social media links (YouTube, Twitch, Twitter/X, GitHub) that you or staff add to your member profile</p>
 <p><strong>Moderation data</strong>
 - Server audit log entries relating to kicks and bans, including the responsible moderator, the affected user, and any stated reason, used to generate moderation log messages</p>
 <p><strong>Command input you provide</strong>
 - Any values you supply as options to a slash command (for example, a Minecraft in-game name, a poll question, a server selection, or a target user)</p>
-<p><strong>Minecraft-related data</strong>
-- Minecraft in-game names and UUIDs that you or staff submit through commands (for example, whitelist management)
-- Minecraft server information retrieved on request (server status, player lists, whitelists, scoreboards, mod lists, and backups)</p>
+<p><strong>Minecraft and operational data</strong>
+- Minecraft in-game names and UUIDs used for whitelist and operator management
+- Scheduled whitelist and operator tasks tied to in-game names
+- Minecraft server connection details (used by the Operator to manage the game servers)
+- Minecraft player skins retrieved for display</p>
 <p>WaveBot does <strong>not</strong> collect payment information, passwords, real names, email addresses, location data, or any other sensitive personal information beyond what is described above.</p>
 <hr />
 <h2>3. How We Use Information</h2>
 <p>We use the information above solely to operate features of the WaveTech community. Specifically:</p>
 <ul>
-<li><strong>Member logging:</strong> When a member joins or leaves the server, the Bot posts a log message to a staff-only channel containing the member's username, user ID, account creation date, and (on leaving) join date. This supports server security and helps staff identify suspicious or newly created accounts.</li>
-<li><strong>Moderation logging:</strong> When a member is kicked or banned, the Bot reads the relevant audit log entry to post a moderation log message to a staff-only channel.</li>
-<li><strong>User and server information commands:</strong> Commands such as user info, avatar, and server info return Discord-provided data (username, ID, roles, join dates, avatar, member count, invite link) on request.</li>
-<li><strong>Onboarding:</strong> The trial-member command posts a welcome message that mentions and references a selected new member.</li>
-<li><strong>Minecraft server management:</strong> Commands let authorized users start, stop, query, and administer the connected Minecraft servers; manage whitelists and operators; run server commands via RCON; manage mods; create and manage backups; mirror world data; and view scoreboards and player skins.</li>
+<li><strong>Member and moderation logging:</strong> When a member joins, leaves, or is kicked or banned, the Bot posts a log message to a staff-only channel and, for kicks and bans, reads the relevant audit log entry. Join and leave logs may include username, user ID, account creation date, and join date, and help staff identify suspicious or newly created accounts.</li>
+<li><strong>Whitelist and operator automation:</strong> The Bot links your Discord roles to your Minecraft in-game name so that gaining or losing a role automatically adds or removes your whitelist or operator access on the connected Minecraft servers. Role changes are detected through the role-update event and processed on a recurring schedule.</li>
+<li><strong>Member directory and socials:</strong> Staff can record and display members' social media links (YouTube, Twitch, Twitter/X, GitHub) so the community can find and follow its content creators.</li>
+<li><strong>Minecraft server management:</strong> Commands let authorized users query and administer the connected Minecraft servers; manage whitelists and operators; run server commands via RCON; manage mods; create and manage backups; mirror world data; view scoreboards; and display player skins.</li>
+<li><strong>User and server information commands:</strong> Commands such as user info, IGN lookup, avatar, and server info return the relevant stored or Discord-provided data on request.</li>
 <li><strong>Utility features:</strong> Commands such as polls and random animal images perform their stated function using the input you provide.</li>
 </ul>
 <p>We do not use your information for advertising, profiling, or any purpose unrelated to operating the community.</p>
 <hr />
 <h2>4. Data Storage and Retention</h2>
-<p>WaveBot does <strong>not</strong> maintain its own database and does <strong>not</strong> store your Discord data on any external server or disk. Information is read from Discord, processed in memory to fulfill a command or event, and then discarded.</p>
-<p>Where the Bot's actions produce a result that persists, that result lives within the relevant platform rather than in a separate WaveBot data store:</p>
-<ul>
-<li><strong>Log messages</strong> (member joins/leaves, moderation actions) are posted as Discord messages in staff channels and persist in Discord according to the server's own configuration and Discord's retention. These can be deleted by staff like any other Discord message.</li>
-<li><strong>Minecraft data</strong> (such as whitelist entries and operator status) persists on the Minecraft servers themselves, not within the Bot.</li>
-</ul>
-<p>Because the Bot keeps no independent records, it retains no copy of your data once a command or event has been handled.</p>
+<p>WaveBot stores member profile data (Discord user IDs, linked Minecraft in-game names, mirrored roles, and any social media links) in a private database hosted on the Operator's own infrastructure, alongside operational records such as Minecraft server configuration and scheduled whitelist/operator tasks. This database is used only to run the features described in this policy and is not shared with or sold to third parties.</p>
+<p>Stored data is retained for as long as it is needed to provide these features. In practice:
+- Member profile records persist while you are a member of the community and while the linked features remain in use.
+- Scheduled tasks are removed once completed, and stale or obsolete tasks can be purged by staff.
+- You may ask staff to remove your stored in-game name or social links at any time (see Section 7).</p>
+<p>Separately, <strong>log messages</strong> the Bot posts (member joins/leaves, moderation actions) live as Discord messages in staff channels and persist according to the server's configuration and Discord's retention; they can be deleted by staff like any other message. <strong>Minecraft access data</strong> (such as whitelist and operator status) also persists on the Minecraft servers themselves.</p>
 <hr />
 <h2>5. Third-Party Services</h2>
-<p>To provide its features, WaveBot transmits certain information to the following third-party services. Each is used only to the extent necessary to fulfill a requested action:</p>
+<p>To provide its features, WaveBot transmits certain information to the following third-party services, each used only to the extent necessary:</p>
 <ul>
 <li><strong>Discord</strong> — the platform the Bot operates on. Your use of Discord is governed by <a href="https://discord.com/privacy">Discord's Privacy Policy</a>.</li>
 <li><strong>Mojang / Minecraft services</strong> — Minecraft in-game names and UUIDs are sent to official Mojang APIs to look up player profiles and skins.</li>
-<li><strong>Pterodactyl panel</strong> — server management commands communicate with the Operator's Pterodactyl game-server control panel to start, stop, and administer Minecraft servers and their files.</li>
 <li><strong>Minecraft game servers (via RCON)</strong> — in-game names and administrative commands are sent directly to the connected Minecraft servers to manage whitelists, operators, scoreboards, and other server functions.</li>
 </ul>
-<p>WaveBot does not sell, rent, or share your information with any third party for marketing purposes, and does not share your data with anyone other than the services listed above for the purposes described.</p>
+<p>The social media links stored in your member profile are values you or staff provide; the Bot stores and displays them but does not transmit them to the linked platforms on your behalf. WaveBot does not sell, rent, or share your information with any third party for marketing purposes.</p>
 <hr />
 <h2>6. Data Sharing and Disclosure</h2>
 <p>We do not disclose your information except:</p>
 <ul>
 <li>to the third-party services listed in Section 5, as needed to operate the Bot's features;</li>
-<li>to WaveTech server staff, who can view the log and command outputs the Bot posts in Discord; and</li>
+<li>to WaveTech server staff, who can view stored member data and the log and command outputs the Bot posts in Discord; and</li>
 <li>where required by law or to protect the rights, safety, or security of the community.</li>
 </ul>
 <hr />
 <h2>7. Your Choices and Rights</h2>
 <ul>
-<li><strong>Leaving the server:</strong> You can stop the Bot from accessing your membership data at any time by leaving the WaveTech Discord server.</li>
-<li><strong>Slash commands:</strong> Because the Bot acts only when a command is run or a membership event occurs, you control most data flows by choosing whether to use its commands.</li>
-<li><strong>Requests:</strong> You may ask the Operator to remove identifiable log messages relating to you, or ask what information has been posted about you, by contacting a <strong>Moderator</strong> in the WaveTech Discord server (or by emailing huntoonmc@gmail.com if you cannot reach one). We will honor reasonable requests consistent with the needs of server moderation and security.</li>
+<li><strong>Leaving the server:</strong> You can stop the Bot from accessing your live membership data by leaving the WaveTech Discord server. You may also ask staff to delete any profile data already stored about you.</li>
+<li><strong>Managing your profile:</strong> You may ask a Moderator to add, change, or remove your linked Minecraft in-game name or your stored social media links at any time.</li>
+<li><strong>Access and deletion requests:</strong> You may ask what information is stored about you, or request its deletion, by contacting a <strong>Moderator</strong> in the WaveTech Discord server (or by emailing huntoonmc@gmail.com if you cannot reach one). We will honor reasonable requests consistent with the needs of server moderation and security.</li>
 </ul>
 <p>Depending on where you live, you may have additional rights under laws such as the GDPR or CCPA (for example, rights of access, correction, or deletion). To exercise any such right, contact a <strong>Moderator</strong> in the WaveTech Discord server, or email huntoonmc@gmail.com.</p>
 <hr />
@@ -112,7 +118,7 @@
 <p>WaveBot is not directed to children under the age of 13 (or the minimum age required by Discord's Terms of Service in your jurisdiction). The Bot does not knowingly collect information from anyone below that age. If you believe a child has provided information through the Bot, please contact a <strong>Moderator</strong> in the WaveTech Discord server so it can be addressed.</p>
 <hr />
 <h2>9. Security</h2>
-<p>WaveBot accesses only the data necessary for its features and does not retain that data in its own storage. Communications with third-party services use those services' standard secure interfaces. However, no method of transmission or processing is completely secure, and we cannot guarantee absolute security.</p>
+<p>WaveBot accesses only the data necessary for its features, and stored member data is kept in a private database on the Operator's infrastructure. Communications with third-party services use those services' standard interfaces. However, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
 <hr />
 <h2>10. Changes to This Policy</h2>
 <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last Updated" date above and post the updated policy in the WaveTech server. Material changes will be communicated to members through the server. Your continued membership after an update constitutes acknowledgment of the revised policy.</p>
